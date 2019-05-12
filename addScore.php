@@ -7,6 +7,5 @@
     );
     $json[]= $extra;
     $final = json_encode($json);
-    // file_put_contents('ajax/score.json', $final);
-    // var_dump($final);
+    file_put_contents('ajax/score.json', $final);
 ?>
