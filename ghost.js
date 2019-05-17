@@ -64,7 +64,11 @@ function bfs(g, p){
     arrived[node[1]/scl][node[0]/scl] = true;
     
     if (node[0] == p[0] && node[1] == p[1]){
-      return path[1];
+      if (path[1]==undefined) {
+        return p;
+      } else {
+        return path[1];
+      }
     }
     
     let child = getChild(node,arrived);
@@ -74,5 +78,5 @@ function bfs(g, p){
       q.push(temp);
     }
   }
-  return [30,30];
+  return q;
 }
