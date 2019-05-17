@@ -44,7 +44,6 @@ var maps = [
 ];
 var hs;
 var ch;
-var makanan = 146;
 
 function init(){
   for (var i=0; i<maps.length; i++){
@@ -54,6 +53,7 @@ function init(){
       }
     }
   }
+  maps[13][1] = 3;
   pac = new Pacman();
   tempx = floor(random(10));
   tempy = floor(random(10));
@@ -127,9 +127,6 @@ function setup() {
 
 function draw() {
   background(23);
-  if (makanan == 0){
-    state = 4;
-  }
   if (state == 0){
     fill(220, 220, 220);
     text("Your Name :", 200, 150);
@@ -169,14 +166,18 @@ function draw() {
     
     if (times >= 3){
       frameRate(5);
-      pac.update();
       ghost1.update([pac.x,pac.y]);
       ghost2.update([pac.x,pac.y]);
       ghost3.update([pac.x,pac.y]);
       ghost4.update([pac.x,pac.y]);
       if (pac.death()){
         state = 2;
-      };
+      } else {
+        pac.update();
+        if (pac.score == 1500) {
+          state = 4;
+        }
+      }
       let stat = input.value() + ' ' + pac.score;
       fill(220, 220, 220);
       textSize(32);
