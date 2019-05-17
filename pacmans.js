@@ -17,13 +17,10 @@ function Pacman() {
     if (maps[this.y/30][this.x/30] == 2){
       this.score = this.score + 10;
       maps[this.y/30][this.x/30] = 0;
-      makanan = makanan - 1;
     } else if (maps[this.y/30][this.x/30] == 3){
       this.score = this.score + 50;
       maps[this.y/30][this.x/30] = 0;
-      makanan = makanan - 1;
     }
-
     if (maps[this.y/30+this.yqueue][this.x/30+this.xqueue] != 1){
       this.yspeed = this.yqueue;
       this.xspeed = this.xqueue;
