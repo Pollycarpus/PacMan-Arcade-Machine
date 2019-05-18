@@ -94,6 +94,13 @@ function initGhost() {
 }
 
 function drawWorld() {
+    $(".wall").remove();
+    $(".coin").remove();
+    $(".ground").remove();
+    $(".pacman").remove();
+    $(".ghost").remove();
+    $(".cherries").remove();
+    $("br").remove();
     for(var i = 0; i < maze.length; i++) {
         for(var j = 0; j < maze[i].length; j++) {
             if (maze[i][j] == 1) {
@@ -117,8 +124,10 @@ function drawWorld() {
         }
         $("#world").append("<br>")
     }
+    displayCSS();
 }
 
 initGhost();
+showScore();
 drawWorld();
 
