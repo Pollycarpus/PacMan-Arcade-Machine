@@ -29,6 +29,9 @@ var maze = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 ]
 
+var nCoin = 185;
+var nCherries = 6;
+
 var pacman = {
     x: 9,
     y: 12,
@@ -125,6 +128,14 @@ function drawWorld() {
         $("#world").append("<br>")
     }
     displayCSS();
+}
+
+function winTheGame() {
+    return (nCherries == 0) && (nCoin == 0);
+}
+
+function loseTheGame() {
+    return (pacman.x==ghost1.x&&pacman.y==ghost1.y || pacman.x==ghost2.x&&pacman.y==ghost2.y || pacman.x==ghost3.x&&pacman.y==ghost3.y || pacman.x==ghost4.x&&pacman.y==ghost4.y); 
 }
 
 initGhost();
