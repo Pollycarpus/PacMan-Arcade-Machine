@@ -29,6 +29,70 @@ var maze = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 ]
 
+var pacman = {
+    x: 9,
+    y: 12,
+    score: 0,
+}
+
+var ghost1 = {
+    x: 0,
+    y: 0,
+}
+
+var ghost2 = {
+    x: 0,
+    y: 0,
+}
+
+var ghost3 = {
+    x: 0,
+    y: 0,
+}
+
+var ghost4 = {
+    x: 0,
+    y: 0,
+}
+
+function initGhost() {
+    var x = Math.floor(Math.random() * 20);
+    var y = Math.floor(Math.random() * 20);
+    while (maze[y][x] == 1) {
+        x = Math.floor(Math.random() * 20);
+        y = Math.floor(Math.random() * 20);
+    }
+    ghost1.x = x; ghost1.y = y;
+    maze[y][x] = 5;
+
+    x = Math.floor(Math.random() * 20);
+    y = Math.floor(Math.random() * 20);
+    while (maze[y][x] == 1) {
+        x = Math.floor(Math.random() * 20);
+        y = Math.floor(Math.random() * 20);
+    }
+    ghost2.x = x; ghost2.y = y;
+    maze[y][x] = 5;
+
+    x = Math.floor(Math.random() * 20);
+    y = Math.floor(Math.random() * 20);
+    while (maze[y][x] == 1) {
+        x = Math.floor(Math.random() * 20);
+        y = Math.floor(Math.random() * 20);
+    }
+    ghost3.x = x; ghost3.y = y;
+    maze[y][x] = 5;
+
+    x = Math.floor(Math.random() * 20);
+    y = Math.floor(Math.random() * 20);
+    while (maze[y][x] == 1) {
+        x = Math.floor(Math.random() * 20);
+        y = Math.floor(Math.random() * 20);
+    }
+    ghost4.x = x; ghost4.y = y;
+    maze[y][x] = 5;
+}
+
 function drawWorld() {
     for(var i = 0; i < maze.length; i++) {
         for(var j = 0; j < maze[i].length; j++) {
@@ -55,5 +119,6 @@ function drawWorld() {
     }
 }
 
+initGhost();
 drawWorld();
 

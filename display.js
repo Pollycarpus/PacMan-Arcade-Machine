@@ -74,3 +74,5 @@ $(".cherries").css(
         "background-size":"cover",
     }
 );
+
+$("#board").append("<p id=\"score\">Score : " + pacman.score + "</p>");
