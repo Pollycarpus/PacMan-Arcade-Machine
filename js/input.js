@@ -30,7 +30,6 @@ $(document).keydown(function (event) {
             velocityX = 0;
             velocityY = -1;
             maze[pacman.y][pacman.x] = 3;
-            // pacman.y -= 1;
             break;
         case 39: //RIGHT
             if (maze[pacman.y][pacman.x+1] == 1) {
@@ -48,7 +47,6 @@ $(document).keydown(function (event) {
             velocityX = 1;
             velocityY = 0;
             maze[pacman.y][pacman.x] = 3;
-            // pacman.x += 1;
             break;
         case 40: //DOWN
             if (maze[pacman.y+1][pacman.x] == 1) {
@@ -60,7 +58,6 @@ $(document).keydown(function (event) {
             velocityX = 0;
             velocityY = 1;
             maze[pacman.y][pacman.x] = 3;
-            // pacman.y += 1;
             break;
     };
     if (success) {
@@ -77,6 +74,7 @@ $(document).keydown(function (event) {
         addScoreBoard(name);
         $(this).off("keydown");
         showScoreBoard();
+        gameOver();
         return;
     }
     if (winTheGame()) {
@@ -88,6 +86,7 @@ $(document).keydown(function (event) {
         addScoreBoard(name);
         $(this).off("keydown");
         showScoreBoard();
+        gameOver();
         return;
     }
 
@@ -108,6 +107,7 @@ $(document).keydown(function (event) {
         addScoreBoard(name);
         $(this).off("keydown");
         showScoreBoard();
+        gameOver();
         return;
     }
 });

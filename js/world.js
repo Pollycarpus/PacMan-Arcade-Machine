@@ -33,8 +33,14 @@ var visited = [];
 for (var i = 0; i < 20; i++) {
     visited.push([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 }
+visited[1][2] = 2;
+visited[1][17] = 2;
+visited[16][3] = 2;
+visited[16][16] = 2;
+visited[9][5] = 2;
+visited[9][14] = 2;
 
-var nCoin = 185;
+var nCoin = 189;
 var nCherries = 6;
 
 var pacman = {
@@ -69,7 +75,7 @@ var ghost4 = {
 function initGhost() {
     var x = Math.floor(Math.random() * 20);
     var y = Math.floor(Math.random() * 20);
-    while (maze[y][x] == 1) {
+    while (maze[y][x] == 1 || maze[y][x] == 4) {
         x = Math.floor(Math.random() * 20);
         y = Math.floor(Math.random() * 20);
     }
@@ -78,7 +84,7 @@ function initGhost() {
 
     x = Math.floor(Math.random() * 20);
     y = Math.floor(Math.random() * 20);
-    while (maze[y][x] == 1) {
+    while (maze[y][x] == 1 || maze[y][x] == 4) {
         x = Math.floor(Math.random() * 20);
         y = Math.floor(Math.random() * 20);
     }
@@ -87,7 +93,7 @@ function initGhost() {
 
     x = Math.floor(Math.random() * 20);
     y = Math.floor(Math.random() * 20);
-    while (maze[y][x] == 1) {
+    while (maze[y][x] == 1 || maze[y][x] == 4) {
         x = Math.floor(Math.random() * 20);
         y = Math.floor(Math.random() * 20);
     }
@@ -96,7 +102,7 @@ function initGhost() {
 
     x = Math.floor(Math.random() * 20);
     y = Math.floor(Math.random() * 20);
-    while (maze[y][x] == 1) {
+    while (maze[y][x] == 1 || maze[y][x] == 4) {
         x = Math.floor(Math.random() * 20);
         y = Math.floor(Math.random() * 20);
     }
@@ -154,6 +160,8 @@ function moveGhost(ghost) {
     if (maze[ghostMovement.y][ghostMovement.x] != 5) {
         if (visited[ghost.y][ghost.x] == 1) {
             maze[ghost.y][ghost.x] = 3;
+        } else if (visited[ghost.y][ghost.x] == 2) {
+            maze[ghost.y][ghost.x] = 6;
         } else {
             maze[ghost.y][ghost.x] = 2;
         }
