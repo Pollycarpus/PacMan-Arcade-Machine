@@ -1,8 +1,8 @@
 function displayCSS() {
     $(".wall").css(
         {
-            "width":"20px",
-            "height":"20px",
+            "width":"30px",
+            "height":"30px",
             "display":"inline-block",
             // "background-image":"url(\"assets/coin.gif\")", 
             "background-repeat":"no-repeat",
@@ -15,10 +15,10 @@ function displayCSS() {
 
     $(".coin").css(
         {
-            "width":"20px",
-            "height":"20px",
+            "width":"30px",
+            "height":"30px",
             "display":"inline-block",
-            "background-image":"url(\"assets/coin.gif\")", 
+            "background-image":"url(\"/assets/coin.gif\")", 
             "background-repeat":"no-repeat",
             "background-position":"center",
             "background-color":"black",
@@ -27,8 +27,8 @@ function displayCSS() {
 
     $(".ground").css(
         {
-            "width":"20px",
-            "height":"20px",
+            "width":"30px",
+            "height":"30px",
             "display":"inline-block",
             // "background-image":"url(\"assets/coin.gif\")", 
             "background-repeat":"no-repeat",
@@ -39,10 +39,10 @@ function displayCSS() {
 
     $("#pacman").css(
         {
-            "width":"20px",
-            "height":"20px",
+            "width":"30px",
+            "height":"30px",
             "display":"inline-block",
-            "background-image":"url(\"assets/pacman.gif\")", 
+            "background-image":"url(\"/assets/pacman.gif\")", 
             "background-repeat":"no-repeat",
             "background-position":"center",
             "background-color":"black",
@@ -52,10 +52,10 @@ function displayCSS() {
 
     $(".ghost").css(
         {
-            "width":"20px",
-            "height":"20px",
+            "width":"30px",
+            "height":"30px",
             "display":"inline-block",
-            "background-image":"url(\"assets/ghost.gif\")", 
+            "background-image":"url(\"/assets/ghost.gif\")", 
             "background-repeat":"no-repeat",
             "background-position":"center",
             "background-color":"black",
@@ -65,14 +65,33 @@ function displayCSS() {
 
     $(".cherries").css(
         {
-            "width":"20px",
-            "height":"20px",
+            "width":"30px",
+            "height":"30px",
             "display":"inline-block",
-            "background-image":"url(\"assets/cherries.png\")", 
+            "background-image":"url(\"/assets/cherries.png\")", 
             "background-repeat":"no-repeat",
             "background-position":"center",
             "background-color":"black",
             "background-size":"cover",
         }
     );
+
+    $("#world").css(
+        {
+            "float":"left",
+            "width":"650px",
+        }
+    );
+
+    $("#board").css(
+        {
+            "float":"left",
+        }
+    );
+
+    $("body").css(
+        {
+            "font-family" : "\'Press Start 2P\', cursive"
+        }
+    )
 }

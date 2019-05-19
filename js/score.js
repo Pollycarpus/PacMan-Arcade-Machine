@@ -13,14 +13,22 @@ function showScore() {
     $("#board").html("<p id=\"score\">Score : " + pacman.score + "</p>");
 }
 
-function readScoreBoard() {
-    
+function addScoreBoard(namePlayer) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("POST", "http://localhost:8080/scoreboard", true); // true for asynchronous
+    xmlHttp.setRequestHeader("Content-Type","application/json");
+    xmlHttp.send(JSON.stringify({name: namePlayer, score : pacman.score}));
 }
 
-function addScoreBoard(name) {
-    
-}
+function showScoreBoard() {
+    $("#board").html("<p id=\"score\">Score : " + pacman.score + "</p>");
+    $("#board").append("<p>SCOREBOARD</p>");
 
-function scoreBoard() {
-
+    fetch("http://localhost:8080/scoreboard")
+    .then((response) => response.json())
+    .then((json) => 
+        json.forEach(function(element, index) {
+            $("#board").append("<p class=\"scoreboard\">"+element.name + " : " + element.score + "</p>");
+        })
+    );
 }

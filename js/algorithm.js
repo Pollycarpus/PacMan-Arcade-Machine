@@ -2,8 +2,8 @@ function djikstraAlgo(start, finish) {
     if (start.x == finish.x && start.y == finish.y) {
         return [];
     }
-    var queue = [start], index = 0; result = null;
-    while (result == null) {
+    var queue = [start], index = 0, result = null;
+    while (result == null && index != 10000) {
         var adj = getAdj(queue[index]);
         adj.forEach(element => {
             element.prev = queue[index];
@@ -15,10 +15,16 @@ function djikstraAlgo(start, finish) {
         });
         index++;
     }
-    while (result.prev != start) {
-        result = result.prev;
+    if (result !== null) {
+        while (result.prev !== start) {
+            result = result.prev;
+        }
+        if (result.prev.x == start.x && result.prev.y == start.y) {
+            return result;
+        }
+        return start;
     }
-    return result;
+    return start;
 }
 
 function getAdj(point) {
@@ -38,14 +44,14 @@ function getAdj(point) {
     }
 
     //RIGHT
-    if (point.x + 1 <= maze.length) {
+    if (point.x + 1 < maze.length) {
         if (maze[point.y][point.x+1] != 1) {
             ind.push({ x: point.x+1, y: point.y});
         }
     }
 
     //DOWN
-    if (point.y + 1 <= maze.length) {
+    if (point.y + 1 < maze.length) {
         if (maze[point.y+1][point.x] != 1) {
             ind.push({ x: point.x, y: point.y+1});
         }
