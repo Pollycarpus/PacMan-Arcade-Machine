@@ -37,7 +37,7 @@ function displayCSS() {
         }
     );
 
-    $(".pacman").css(
+    $("#pacman").css(
         {
             "width":"20px",
             "height":"20px",

@@ -12,3 +12,15 @@ function addScore() {
 function showScore() {
     $("#board").html("<p id=\"score\">Score : " + pacman.score + "</p>");
 }
+
+function readScoreBoard() {
+    
+}
+
+function addScoreBoard(name) {
+    
+}
+
+function scoreBoard() {
+
+}

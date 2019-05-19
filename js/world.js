@@ -29,6 +29,11 @@ var maze = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 ]
 
+var visited = [];
+for (var i = 0; i < 20; i++) {
+    visited.push([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+}
+
 var nCoin = 185;
 var nCherries = 6;
 
@@ -37,6 +42,9 @@ var pacman = {
     y: 12,
     score: 0,
 }
+
+var velocityX = 0;
+var velocityY = 0;
 
 var ghost1 = {
     x: 0,
@@ -94,13 +102,15 @@ function initGhost() {
     }
     ghost4.x = x; ghost4.y = y;
     maze[y][x] = 5;
+
+    visited[pacman.y][pacman.x] = 1;
 }
 
 function drawWorld() {
     $(".wall").remove();
     $(".coin").remove();
     $(".ground").remove();
-    $(".pacman").remove();
+    $("#pacman").remove();
     $(".ghost").remove();
     $(".cherries").remove();
     $("br").remove();
@@ -116,7 +126,7 @@ function drawWorld() {
                 $("#world").append("<div class=\"ground\"></div>")
             }
             else if (maze[i][j] == 4) {
-                $("#world").append("<div class=\"pacman\"></div>")
+                $("#world").append("<div id=\"pacman\"></div>")
             }
             else if (maze[i][j] == 5) {
                 $("#world").append("<div class=\"ghost\"></div>")
@@ -130,6 +140,63 @@ function drawWorld() {
     displayCSS();
 }
 
+function movePacman() {
+    pacman.x += velocityX;
+    pacman.y += velocityY;
+    visited[pacman.y][pacman.x] = 1;
+    addScore();
+    showScore();
+    maze[pacman.y][pacman.x] = 4;
+}
+
+function moveGhost() {
+    var ghostMovement = djikstraAlgo(ghost1,pacman);
+    if (maze[ghostMovement.y][ghostMovement.x] != 5) {
+        if (visited[ghost1.y][ghost1.x] == 1) {
+            maze[ghost1.y][ghost1.x] = 3;
+        } else {
+            maze[ghost1.y][ghost1.x] = 2;
+        }
+        ghost1.x = ghostMovement.x; ghost1.y = ghostMovement.y;
+        maze[ghost1.y][ghost1.x] = 5;    
+    }
+
+    ghostMovement = djikstraAlgo(ghost2,pacman);
+    if (maze[ghostMovement.y][ghostMovement.x] != 5) {
+        if (visited[ghost2.y][ghost2.x] == 1) {
+            maze[ghost2.y][ghost2.x] = 3;
+        } else {
+            maze[ghost2.y][ghost2.x] = 2;
+        }
+        ghost2.x = ghostMovement.x; ghost2.y = ghostMovement.y;
+        maze[ghost2.y][ghost2.x] = 5;
+    }
+
+    ghostMovement = djikstraAlgo(ghost3,pacman);
+    if (maze[ghostMovement.y][ghostMovement.x] != 5) {
+        if (visited[ghost3.y][ghost3.x] == 1) {
+            maze[ghost3.y][ghost3.x] = 3;
+        } else {
+            maze[ghost3.y][ghost3.x] = 2;
+        }
+        ghost3.x = ghostMovement.x; ghost3.y = ghostMovement.y;
+        maze[ghost3.y][ghost3.x] = 5;
+    }
+
+    ghostMovement = djikstraAlgo(ghost4,pacman);
+    if (maze[ghostMovement.y][ghostMovement.x] != 5) {
+        if (visited[ghost4.y][ghost4.x] == 1) {
+            maze[ghost4.y][ghost4.x] = 3;
+        } else {
+            maze[ghost4.y][ghost4.x] = 2;
+        }
+        ghost4.x = ghostMovement.x; ghost4.y = ghostMovement.y;
+        maze[ghost4.y][ghost4.x] = 5;
+    }
+    
+    drawWorld();
+}
+
 function winTheGame() {
     return (nCherries == 0) && (nCoin == 0);
 }
@@ -141,4 +208,3 @@ function loseTheGame() {
 initGhost();
 showScore();
 drawWorld();
-
