@@ -181,3 +181,4 @@ function loseTheGame() {
 initGhost();
 showScore();
 drawWorld();
+rightPacman();

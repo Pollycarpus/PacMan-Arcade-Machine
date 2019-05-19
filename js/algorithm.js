@@ -24,7 +24,13 @@ function djikstraAlgo(start, finish) {
         }
         return start;
     }
-    return start;
+    else {
+        result = queue[index];
+        while (result.prev !== start) {
+            result = result.prev;
+        }
+        return result;
+    }
 }
 
 function getAdj(point) {

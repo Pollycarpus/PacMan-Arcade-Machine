@@ -1,42 +1,28 @@
 # PacMan-Arcade-Machine
 
-## (Ubah file README.md ini setelah program diselesaikan)
+PacMan-Arcade-Machine adalah game sejenis persis atau sama seperti permainan pacman yang sama seperti pacman yang telah melegenda.
 
-## Latar Belakang
-Pacman merupakan video game yang telah populer sejak dekade 80-an. Dalam permainan ini pemain mengontrol karakter Pac-Man menggunakan keyboard arrows maupun joystick. Tujuan permainan ini yaitu untuk menggerakkan Pac-Man di dalam maze untuk melahap semua makanannya sebelum hantu-hantu memakan Pac-Man. Pemain dinyatakan menang apabila seluruh makanan telah habis dan Pac-Man masih bertahan hidup. Sedangkan pemain dinyatakan kalah apabila Pac-Man mati sebelum menghabiskan seluruh makanannya.
+## Nama
+Muhammad Fikri Hizbullah
 
-## Spesifikasi
-Untuk mengatasi kejenuhan asisten lab IRK setelah menilai tubes, kordas mengusulkan untuk mengadakan Pacman Arcade Machine di lab IRK. Sebagai game developer Anda diminta untuk membuatkan lab IRK sebuah PacMan Arcade Machine yang menjalankan game pada Browser. Program dibuat menggunakan bahasa <b>JavaScript</b> dengan ketentuan sebagai berikut. 
+## NIM
+13517104
 
-1.  Ukuran Maze adalah minimum 20 x 15 dan maksimum 40 x 30. Anda mendesain sendiri bentuk maze sekreatif mungkin.
-2.  Kontrol karakter Pac-Man menggunakan input keyboard
-3.  Algoritma pergerakan bot ghost yang dapat Anda pilih: <b>Djikstra</b> ATAU <b>Breadth First Search</b>. Sebuah bot ghost pada awal permainan dispawn random di sebuah titik. kemudian bot akan mulai mengejar Pac-Man menggunakan mekanisme dari algoritma yang Anda pilih. Jika titik bot = titik Pac-Man maka Pac-Man akan dimakan bot dan mati.
-4.  Jika pemain dalam kondisi kalah tampilkan pesan kekalahan (Misal: "Game Over") dan sebaliknya jika menang tampilkan pesan kemenangan (Misal: "You win").  
-5.  Program dapat menampilkan score pemain. Koin yang dimakan bernilai 10 dan buah yang dimakan bernilai 50. Penempatan koin dan buah bebas,
+## No. Urut Pilihan
+3 atau 4 (lupa..)
 
-Pada repositori ini telah disediakan asset yang <b>wajib</b> digunakan untuk program yang akan Anda buat, silakan Anda pakai dan boleh ditambah dengan asset lain dari luar jika diperlukan. 
+## Cara Bermain
+Kamu harus sudah menginstall
+1. Node JS
+2. ExpressJS
 
-Terakhir ubah isi file readme ini menjadi:
-- Nama
-- NIM
-- Nomor urutan lab IRK sebagai pilihan
-- Panduan memainkan permainan
-- Alasan pemilihan algoritma (Djikstra / BFS)
+Setelah itu, masuk ke folder clone dari repository ini dan jalankan perintah
+```bash
+    node app
+```
+lalu buka http://localhost:8080.
 
-## Bonus
-1.  Tampilan program dibangun menggunakan library jQuery.
-2.  Spawn 4 ghosts pada 4 titik berbeda di awal permainan. Kemudian setiap bot ghost mengejar Pac-Man menggunakan mekanisme dari algoritma yang Anda pilih.
-3. Program dapat menampilkan scoreboard di akhir permainan. Pemain memasukkan input nama kemudian program menyimpan nama pemain dan score dalam file JSON. Scoreboard akan menampilkan score secara terurut dari score tertinggi hingga terendah.
+Permainan menggunakan arah keyboard untuk menggerakan si pacman. Permainan akan kalah bilamana pacman dengan ghost dalam satu petak. Permainan akan menang bilamana pacman berhasil memakan semua koin dan buah ceri yang ada. Koin menambah 10 skor dan ceri menambah 50 skor. Setelah permainan usai, akan ditampilkan scoreboard yang mana akan diurutkan dari yang memiliki score terbesar ke yang terkecil. Jika ingin membuat permainan baru cukup muat ulang web. Selamat bermain!
 
-## Penilaian
-1.  Kebenaran fungsionalitas permainan dan kesesuaian spek
-2.  Langkah algoritma pergerakan bot hantu
-3.  Readme
-4.  Kreativitas, kerapihan kode, dan keindahan interface
-5.  Bonus 1, 2, dan 3
-
-Komponen 1 sampai 4 bernilai 1600 dan komponen 5 bernilai 900 (setiap bonus bernilai 300).
-
-## Referensi
-1.  https://learn.jquery.com/
-2.  Stack Overflow
+## Alasan Pemilihan Algoritma
+Pada permainan ini, ghost yang mengejar si pacman dirancang dengan menggunakan algoritma Djikstra. Namun, ditambahkan versi <i>prunning</i> dimana bilamana sudah mencapai 10000 pencarian dan tidak ditemukan solusi. Maka, algoritma akan memberikan solusi yang paling mendekati solusi sebenarnya. Alasannya karena jika tidak dilakukan <i>prunning</i> akan terlalu lama dalam pencarian nya sehingga akan menimbulkan efek <i>laggy</i> dalam permainan. Pemilihan djikstra ialah karena metode ini salah satu algoritma yang efektif digunakan dalam mencari <i>shortest path</i>.

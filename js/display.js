@@ -39,7 +39,6 @@ function displayCSS() {
             "width":"27px",
             "height":"27px",
             "display":"inline-block",
-            "background-image":"url(\"/assets/pacman.gif\")", 
             "background-repeat":"no-repeat",
             "background-position":"center",
             "background-color":"black",
@@ -108,6 +107,22 @@ function displayCSS() {
             "font-size":"70px",
         }
     )
+}
+
+function leftPacman() {
+    $("#pacman").css("background-image", "url(\"/assets/pacmanleft.gif\")")
+}
+
+function rightPacman() {
+    $("#pacman").css("background-image", "url(\"/assets/pacman.gif\")")
+}
+
+function upPacman() {
+    $("#pacman").css("background-image", "url(\"/assets/pacmanup.gif\")")
+}
+
+function downPacman() {
+    $("#pacman").css("background-image", "url(\"/assets/pacmandown.gif\")")
 }
 
 function gameOver() {
