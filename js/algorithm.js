@@ -1,13 +1,17 @@
-function djikstraAlgo(start, finish) {
+function BFSAlgo(start, finish) {
     if (start.x == finish.x && start.y == finish.y) {
         return [];
     }
-    var queue = [start], index = 0, result = null;
-    while (result == null && index != 10000) {
+    var queue = [start], index = 0, result = null, visited = []
+    while (result == null) {
+        visited.push(queue[index]);
         var adj = getAdj(queue[index]);
         adj.forEach(element => {
             element.prev = queue[index];
-            queue.push(element);
+            let checkvisit = visited.find(visit => visit.x == element.x && visit.y == element.y);
+            if (checkvisit == undefined) { //Notvisited
+                queue.push(element);
+            } 
 
             if (element.x == finish.x && element.y == finish.y) {
                 result = element;
@@ -15,22 +19,10 @@ function djikstraAlgo(start, finish) {
         });
         index++;
     }
-    if (result !== null) {
-        while (result.prev !== start) {
-            result = result.prev;
-        }
-        if (result.prev.x == start.x && result.prev.y == start.y) {
-            return result;
-        }
-        return start;
+    while (result.prev != start) {
+        result = result.prev;
     }
-    else {
-        result = queue[index];
-        while (result.prev !== start) {
-            result = result.prev;
-        }
-        return result;
-    }
+    return result;
 }
 
 function getAdj(point) {

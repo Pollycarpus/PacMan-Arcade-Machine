@@ -156,7 +156,7 @@ function movePacman() {
 }
 
 function moveGhost(ghost) {
-    var ghostMovement = djikstraAlgo(ghost,pacman);
+    var ghostMovement = BFSAlgo(ghost,pacman);
     if (maze[ghostMovement.y][ghostMovement.x] != 5) {
         if (visited[ghost.y][ghost.x] == 1) {
             maze[ghost.y][ghost.x] = 3;
