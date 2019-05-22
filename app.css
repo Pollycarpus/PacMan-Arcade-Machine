@@ -1,0 +1,84 @@
+.block-element {
+	position: absolute;
+}
+
+#score {
+	position: absolute;
+	top : 12%;
+	left : 10%;
+	padding: none;
+}
+
+#game-over {
+	text-align : center;
+}
+
+#option {
+	position: absolute;
+	top: 40%;
+	left: 45%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.checked {
+	color: white;
+	font-size: 20px;
+}
+
+.unchecked {
+	color : #d0d3d8;
+	font-size: 20px;
+}
+
+body {
+	background: #1919A6;
+	text-align : center;
+	 font-family: 'PAC-FONT';
+}
+
+.form-group {
+	margin-top: 3%;
+	width: 67%;
+	position: relative;
+	left: 23%;
+}
+
+
+.form-control {
+	width: 80%;
+}
+
+#table-score {
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	top: 90%;
+	color : white;
+}
+
+#high-score {
+	text-align: center;
+	position: relative;
+	top: 20%;
+}
+
+.homepage {
+	margin-top: 5%;
+}
+
+.gameover {
+	padding: 12%;
+}
+
+@font-face {
+  font-family: 'PAC-FONT';
+  src: url('./assets/atarifull.ttf')  format('truetype');/* Safari, Android, iOS */
+}
+
+#final-score {
+	color: white;
+	padding-top: 2%;
+}
