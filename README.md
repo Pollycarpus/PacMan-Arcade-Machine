@@ -1,42 +1,22 @@
 # PacMan-Arcade-Machine
 
-## (Ubah file README.md ini setelah program diselesaikan)
+## NAMA
+Muhammad Hanif Adzkiya
 
-## Latar Belakang
-Pacman merupakan video game yang telah populer sejak dekade 80-an. Dalam permainan ini pemain mengontrol karakter Pac-Man menggunakan keyboard arrows maupun joystick. Tujuan permainan ini yaitu untuk menggerakkan Pac-Man di dalam maze untuk melahap semua makanannya sebelum hantu-hantu memakan Pac-Man. Pemain dinyatakan menang apabila seluruh makanan telah habis dan Pac-Man masih bertahan hidup. Sedangkan pemain dinyatakan kalah apabila Pac-Man mati sebelum menghabiskan seluruh makanannya.
+## NIM 
+13517120
 
-## Spesifikasi
-Untuk mengatasi kejenuhan asisten lab IRK setelah menilai tubes, kordas mengusulkan untuk mengadakan Pacman Arcade Machine di lab IRK. Sebagai game developer Anda diminta untuk membuatkan lab IRK sebuah PacMan Arcade Machine yang menjalankan game pada Browser. Program dibuat menggunakan bahasa <b>JavaScript</b> dengan ketentuan sebagai berikut. 
+## Nomor urutan lab IRK sebagai pilihan
+1
 
-1.  Ukuran Maze adalah minimum 20 x 15 dan maksimum 40 x 30. Anda mendesain sendiri bentuk maze sekreatif mungkin.
-2.  Kontrol karakter Pac-Man menggunakan input keyboard
-3.  Algoritma pergerakan bot ghost yang dapat Anda pilih: <b>Djikstra</b> ATAU <b>Breadth First Search</b>. Sebuah bot ghost pada awal permainan dispawn random di sebuah titik. kemudian bot akan mulai mengejar Pac-Man menggunakan mekanisme dari algoritma yang Anda pilih. Jika titik bot = titik Pac-Man maka Pac-Man akan dimakan bot dan mati.
-4.  Jika pemain dalam kondisi kalah tampilkan pesan kekalahan (Misal: "Game Over") dan sebaliknya jika menang tampilkan pesan kemenangan (Misal: "You win").  
-5.  Program dapat menampilkan score pemain. Koin yang dimakan bernilai 10 dan buah yang dimakan bernilai 50. Penempatan koin dan buah bebas,
+## Panduan memainkan permainan
+Gunakan keyboard panah atas, bawah, kiri, dan kanan untuk menggerakkan pac man. Ambil sebanyak mungkin koin, hindari hantu, dan selamat bersenang - senang
 
-Pada repositori ini telah disediakan asset yang <b>wajib</b> digunakan untuk program yang akan Anda buat, silakan Anda pakai dan boleh ditambah dengan asset lain dari luar jika diperlukan. 
+## Alasan pemilihan algoritma 
+Algoritma yang dipilih adalah BFS karena : <br>
+1. Ukuran maze yang kecil sehingga algoritma BFS tidak terlalu makan banyak waktu yang signifikan<br>
+2. Jika memakai dijkstra diperlukan array dengan indeks yang banyak dan susah dalam menentukan edgenya dikarenakan posisi hantu yang dinamis. <br>
 
-Terakhir ubah isi file readme ini menjadi:
-- Nama
-- NIM
-- Nomor urutan lab IRK sebagai pilihan
-- Panduan memainkan permainan
-- Alasan pemilihan algoritma (Djikstra / BFS)
+## Screenshot program
 
-## Bonus
-1.  Tampilan program dibangun menggunakan library jQuery.
-2.  Spawn 4 ghosts pada 4 titik berbeda di awal permainan. Kemudian setiap bot ghost mengejar Pac-Man menggunakan mekanisme dari algoritma yang Anda pilih.
-3. Program dapat menampilkan scoreboard di akhir permainan. Pemain memasukkan input nama kemudian program menyimpan nama pemain dan score dalam file JSON. Scoreboard akan menampilkan score secara terurut dari score tertinggi hingga terendah.
-
-## Penilaian
-1.  Kebenaran fungsionalitas permainan dan kesesuaian spek
-2.  Langkah algoritma pergerakan bot hantu
-3.  Readme
-4.  Kreativitas, kerapihan kode, dan keindahan interface
-5.  Bonus 1, 2, dan 3
-
-Komponen 1 sampai 4 bernilai 1600 dan komponen 5 bernilai 900 (setiap bonus bernilai 300).
-
-## Referensi
-1.  https://learn.jquery.com/
-2.  Stack Overflow
+<img src="./img/1.png">
