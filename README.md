@@ -52,7 +52,7 @@ Demo dilakukan dengan membuat sebuah video yang berisi:
 - Penjelasan langkah-langkah dari algoritma yang dipilih, mencakup struktur data dan metode pemanggilan fungsi (kapan fungsi Djikstra/BFS dipanggil, setiap memasuki state tertentu ataukah dalam interval waktu tertentu).
 - Penjelasan kegunaan library/framework yang dipakai, jika pakai.
 
-Semua jawaban pertanyaan di atas <b>harus</b> disampaikan secara lisan. Video yang telah dibuat diupload ke Youtube. Kemudian kirimkan link video kepada asisten <b>maksimal 7 hari</b> setelah <i>pull request</i>. Keterlambatan atau tidak mengumpulkan demo akan mengakibatkan repositori yang kamu kumpulkan tidak dinilai.
+Semua jawaban pertanyaan di atas <b>harus</b> disampaikan secara lisan. Video yang telah dibuat diupload ke Youtube. Kemudian kirimkan link video kepada asisten yang menilai tugas ini <b>maksimal 7 hari</b> setelah <i>pull request</i>. Keterlambatan atau tidak mengumpulkan demo akan mengakibatkan repositori yang kamu kumpulkan tidak dinilai.
 
 ## Referensi
 1.  https://learn.jquery.com/
